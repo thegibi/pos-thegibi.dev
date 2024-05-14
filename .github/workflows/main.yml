@@ -3,12 +3,12 @@ name: Build and Release
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
     runs-on: macos-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
