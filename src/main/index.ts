@@ -1,7 +1,14 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import * as Sentry from '@sentry/electron/main'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+
+Sentry.init({
+  dsn: 'https://examplePublicKey@o0.ingest.sentry.io/0',
+  debug: true,
+  ipcMode: Sentry.IPCMode.Protocol
+})
 
 function createWindow(): void {
   // Create the browser window.
